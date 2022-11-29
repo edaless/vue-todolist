@@ -29,7 +29,8 @@
             <ul>
                 <li v-for="(task, index) in tasks" :class="task.done ? 'fatto' : 'nonFatto'" @click="doOrDoNot(index)">
                     {{task.text}}
-                    <div class="x-container" @click="deleteTask(index)">
+                    <div class="x-container" @click.stop="deleteTask(index)">
+                        <!-- il .stop serve ad evitare che il click vada al doOrDoNot, poiché farebbe casini -->
                         <i class="fa-solid fa-xmark"></i>
                     </div>
                     
