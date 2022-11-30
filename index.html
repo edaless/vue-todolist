@@ -27,6 +27,7 @@
             <div id="error" v-if="error">guarda che devi inserire almeno 5 caratteri</div>
             <button @click="addTask">aggiungi</button>
             <ul>
+                <!-- se clicchi su una task cambi il valore del .done con doOrDoNot() -->
                 <li v-for="(task, index) in tasks" :class="task.done ? 'fatto' : 'nonFatto'" @click="doOrDoNot(index)">
                     {{task.text}}
                     <div class="x-container" @click.stop="deleteTask(index)">

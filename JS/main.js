@@ -21,9 +21,18 @@ createApp({
             newTask: '',
             error: false,
             tasks: [
-            { text: 'Fare i compiti', done: false }, 
-            { text: 'Fare la spesa', done: true }, 
-            { text: 'Fare il bucato', done: false }
+                { 
+                    text: 'Fare i compiti', 
+                    done: false 
+                }, 
+                { 
+                    text: 'Fare la spesa', 
+                    done: true 
+                }, 
+                { 
+                    text: 'Fare il bucato', 
+                    done: false 
+                }
             ]
 
         }
@@ -31,7 +40,14 @@ createApp({
     methods:{
         addTask(){
             if(this.newTask.length >= 5){
-                this.tasks.unshift({text : this.newTask, done: false});
+                // nuovo oggetto
+                this.tasks.unshift(
+                    {
+                        text : this.newTask, 
+                        done: false
+                    }
+                );
+                // tolgo l'error (magari c'era un errore e non si toglietebbe altrimenti)
                 this.error = false;
             }else{
                 this.error = true;
